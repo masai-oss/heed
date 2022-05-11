@@ -12,7 +12,9 @@ export type Props = {
 export type Options = {
     value: number;
     labelText: string;
-};
+}
+
+
 
 
 
