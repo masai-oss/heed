@@ -5,6 +5,8 @@ export type Props = {
     required: boolean;
     currect_option:number,
     orientation:"horizontal" | "vertical",
+    image?:string,
+    alt?:string,
 }
 
 export type Options = {
