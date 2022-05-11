@@ -16,3 +16,8 @@ const data:Props = {
     orientation:"horizontal",
 }
 export default data;
+
+
+
+
+
