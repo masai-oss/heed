@@ -7,7 +7,7 @@ import { Grid } from "@mantine/core";
 export default function MCQ(props: Props) {
   const { question, description, required, options, orientation, image, alt } = props;
   const [value, setValue] = useState<string>("1");
-  let span=orientation=="horizontal"?8:3;
+  let span = orientation == "horizontal" ? 8 : 3;
   return (
     <Grid>
       <Grid.Col span={span}>
@@ -28,8 +28,8 @@ export default function MCQ(props: Props) {
           ))}
         </RadioGroup>
       </Grid.Col>
-      <Grid.Col span={3}>
-        {image ? (
+      {image ? (
+        <Grid.Col span={3}>
           <Image
             sx={imageStyles}
             radius="md"
@@ -37,10 +37,11 @@ export default function MCQ(props: Props) {
             src={image}
             alt={alt ? alt : "Image about Question"}
           />
-        ) : (
-          <></>
-        )}
-      </Grid.Col>
+        </Grid.Col>
+      ) : null}
     </Grid>
   );
 }
+
+
+
