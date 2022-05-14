@@ -13,7 +13,7 @@ export default function MCQ(props: Props) {
       <Grid.Col span={span}>
         <RadioGroup
           label={question}
-          orientation={orientation}
+          orientation={orientation?orientation:"vertical"}
           description={description}
           required={required}
           value={value.toString()}

@@ -4,7 +4,7 @@ export type Props = {
     options:Array<Options>;
     required: boolean;
     currect_option:number,
-    orientation:"horizontal" | "vertical",
+    orientation?:"horizontal" | "vertical",
     image?:string,
     alt?:string,
 }
