@@ -7,5 +7,9 @@ export const Navbar = () => {
   return <Navigation />;
 };
 
+export const NavbarLogedin = () => {
+  return <Navigation isLogedin={true}/>;
+};
+
 
 

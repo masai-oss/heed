@@ -6,8 +6,8 @@ export default createStyles((theme) => ({
   },
   headerColor: {
     color: theme.colors.gray[6],
-    position:"sticky",
-    top:"0px",
+    position: "sticky",
+    top: "0px",
   },
   displayNone: {
     display: "none",
@@ -18,7 +18,16 @@ export default createStyles((theme) => ({
   },
   profileStyle: {
     position: "absolute",
-    right:"5%",
+    right: "5%",
+  },
+  navOptions: { display: "flex", marginLeft: 50, width: 450, justifyContent: "space-around" },
+  navButtons:{
+    paddingBottom:2,
+    boxSizing:"border-box",
+    fontSize:20,
+    ":hover":{
+      cursor:"pointer"
+    }
   }
 }));
 

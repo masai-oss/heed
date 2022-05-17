@@ -8,13 +8,16 @@ import {
   Box,
   Title,
   Avatar,
+  Button
 } from "@mantine/core";
 import useStyles from "./styles";
-
-export default function Navigation() {
+import { Props } from "./navigation.type";
+export default function Navigation(props:Props) {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState<boolean>(false);
   const { classes } = useStyles();
+  const {isLogedin}= props;
+
   return (
     <Header height={70} p="md">
       <Box className={classes.headerStyles}>
@@ -33,8 +36,28 @@ export default function Navigation() {
             {"< Heed />"}
           </Text>
         </Title>
+        <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+          <Box className={classes.navOptions}>
+            <Text className={classes.navButtons} inherit variant="text" component="div">
+              Polls
+            </Text>
+            <Text className={classes.navButtons} inherit variant="text" component="div">
+              Vots
+            </Text>
+            <Text className={classes.navButtons} inherit variant="text" component="div">
+              Word Cloud
+            </Text>
+            <Text className={classes.navButtons} inherit variant="text" component="div">
+              MCQ
+            </Text>
+          </Box>
+        </MediaQuery>
         <Box className={classes.profileStyle}>
-          <Avatar size={50} src={null} alt="no profile image" color="indigo" radius="xl" />
+          {
+            isLogedin?(<Avatar size={50} src={null} alt="no profile image" color="indigo" radius="xl" />):(
+              <Button variant="gradient" gradient={{ from: 'indigo', to: 'cyan' }}>Login</Button>
+            )
+          }
         </Box>
       </Box>
     </Header>
