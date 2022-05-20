@@ -1,6 +1,6 @@
 import { createStyles } from "@mantine/core";
 
-export default createStyles((theme) => ({
+export const createNavStyles = createStyles((theme) => ({
   main: {
     background: theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.colors.gray[0],
   },
@@ -21,15 +21,18 @@ export default createStyles((theme) => ({
     right: "5%",
   },
   navOptions: { display: "flex", marginLeft: 50, width: 450, justifyContent: "space-around" },
-  navButtons:{
-    paddingBottom:2,
-    boxSizing:"border-box",
-    fontSize:20,
-    ":hover":{
-      cursor:"pointer"
-    }
-  }
+  navButtons: {
+    paddingBottom: 2,
+    boxSizing: "border-box",
+    fontSize: 20,
+    ":hover": {
+      cursor: "pointer",
+    },
+  },
 }));
+
+
+
 
 
 
