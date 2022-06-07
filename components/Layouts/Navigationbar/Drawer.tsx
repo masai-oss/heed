@@ -1,8 +1,7 @@
 import React from "react";
 import { Navbar, Text } from "@mantine/core";
-import { drawerProps } from "./navigation.type";
-function Drawer(props: drawerProps) {
-  const { open } = props;
+
+function Drawer() {
   return (
     <Navbar
       width={{
@@ -10,7 +9,7 @@ function Drawer(props: drawerProps) {
         lg: 400,
         base: 300,
       }}
-      height={"100vh"}
+      height="100vh"
       p="xs"
     >
       <Navbar.Section>{/* Header with logo */}</Navbar.Section>
@@ -19,7 +18,7 @@ function Drawer(props: drawerProps) {
           /* Links sections */
           <>
             <Text>Polls</Text>
-            <Text>Vots</Text>
+            <Text>Votes</Text>
             <Text>Word Cloud</Text>
             <Text>MCQ</Text>
           </>
@@ -31,9 +30,3 @@ function Drawer(props: drawerProps) {
 }
 
 export default Drawer;
-
-
-
-
-
-

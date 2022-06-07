@@ -9,18 +9,30 @@ export const createNavStyles = createStyles((theme) => ({
     position: "sticky",
     top: "0px",
   },
+  headerStyles: {
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
+    justifyContent: "space-between",
+    marginInline: "20px",
+    // gap: "40%",
+  },
+  navItems: {
+    display: "flex",
+    gap: 30,
+  },
   displayNone: {
     display: "none",
   },
-  headerStyles: { display: "flex", alignItems: "center", height: "100%" },
   logoStyle: {
     color: "#228be6",
   },
-  profileStyle: {
-    position: "absolute",
-    right: "5%",
+  navOptions: {
+    display: "flex",
+    gap: 15,
+    justifyContent: "space-around",
+    alignItems: "center",
   },
-  navOptions: { display: "flex", marginLeft: 50, width: 450, justifyContent: "space-around" },
   navButtons: {
     paddingBottom: 2,
     boxSizing: "border-box",
@@ -30,9 +42,3 @@ export const createNavStyles = createStyles((theme) => ({
     },
   },
 }));
-
-
-
-
-
-

@@ -4,6 +4,3 @@ export type navProps = {
 export type drawerProps = {
   open: boolean;
 };
-
-
-

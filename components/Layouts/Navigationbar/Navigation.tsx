@@ -12,7 +12,8 @@ import {
 } from "@mantine/core";
 import { createNavStyles as useStyles } from "./styles";
 import { navProps } from "./navigation.type";
-import Drawer from "./drawer";
+import Drawer from "./Drawer";
+
 export default function Navigation(props: navProps) {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState<boolean>(false);
@@ -35,33 +36,35 @@ export default function Navigation(props: navProps) {
           </MediaQuery>
           <Title>
             <Text inherit variant="gradient" component="span">
-              {"< Heed />"}
+              heed
             </Text>
           </Title>
-          <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
-            <Box className={classes.navOptions}>
-              <Text className={classes.navButtons} inherit variant="text" component="div">
-                Polls
-              </Text>
-              <Text className={classes.navButtons} inherit variant="text" component="div">
-                Vots
-              </Text>
-              <Text className={classes.navButtons} inherit variant="text" component="div">
-                Word Cloud
-              </Text>
-              <Text className={classes.navButtons} inherit variant="text" component="div">
-                MCQ
-              </Text>
+          <Box className={classes.navItems}>
+            <MediaQuery smallerThan="sm" styles={{ display: "none" }}>
+              <Box className={classes.navOptions}>
+                <Text className={classes.navButtons} inherit variant="text" component="div">
+                  Polls
+                </Text>
+                <Text className={classes.navButtons} inherit variant="text" component="div">
+                  Vots
+                </Text>
+                <Text className={classes.navButtons} inherit variant="text" component="div">
+                  Word Cloud
+                </Text>
+                <Text className={classes.navButtons} inherit variant="text" component="div">
+                  MCQ
+                </Text>
+              </Box>
+            </MediaQuery>
+            <Box>
+              {isLogedin ? (
+                <Avatar size={50} src={null} alt="no profile image" color="indigo" radius="xl" />
+              ) : (
+                <Button variant="gradient" gradient={{ from: "indigo", to: "cyan" }}>
+                  Login
+                </Button>
+              )}
             </Box>
-          </MediaQuery>
-          <Box className={classes.profileStyle}>
-            {isLogedin ? (
-              <Avatar size={50} src={null} alt="no profile image" color="indigo" radius="xl" />
-            ) : (
-              <Button variant="gradient" gradient={{ from: "indigo", to: "cyan" }}>
-                Login
-              </Button>
-            )}
           </Box>
         </Box>
       </Header>
@@ -69,8 +72,3 @@ export default function Navigation(props: navProps) {
     </>
   );
 }
-
-
-
-
-
